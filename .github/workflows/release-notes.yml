@@ -14,7 +14,7 @@ on:
 
 jobs:
   build-release-notes:
-    uses: elastic/elastic-agent-changelog-tool/.github/workflows/generate-release-notes.yml@main
+    uses: colleenmcginnis/elastic-agent-changelog-tool/.github/workflows/generate-release-notes.yml@update-pr-message
     with:
       product: Fleet Server
       labels: docs,forwardport-main,release,skip-changelog,Team:Docs
@@ -23,5 +23,6 @@ jobs:
       release_manager: ${{ github.triggering_actor }}
       branching_model: '`main`'
     permissions:
-      contents: read
+      contents: write
       id-token: write
+      pull-requests: write
